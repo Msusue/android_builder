@@ -6,7 +6,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-      git config --global core.autocrlf true
     steps:
       - name: Checkout the code
         # 拉取 android_builder 的源代码
