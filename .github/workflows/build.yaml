@@ -1,3 +1,4 @@
+git config --global core.autocrlf true
 name: android_build
 
 on:
