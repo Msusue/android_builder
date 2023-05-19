@@ -25,6 +25,7 @@ jobs:
         # 拉取项目源码到虚拟环境
         run: git clone --depth=1 ${{ steps.get-project.outputs.PROJECT }} project
       - name: Build the app
+          git congif --global core.autocrlf false
         # 构建调试版 APK
         working-directory: ./project
         run: |
