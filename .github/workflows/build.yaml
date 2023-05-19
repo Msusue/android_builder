@@ -25,13 +25,13 @@ jobs:
         # 拉取项目源码到虚拟环境
         run: git clone --depth=1 ${{ steps.get-project.outputs.PROJECT }} project
       - name: Build the app
-          git congif --global core.autocrlf false
         # 构建调试版 APK
         working-directory: ./project
         run: |
           if [ ! -f "gradlew" ]; then gradle wrapper; fi
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
+          dos2unix [Build the app]
       - name: Upload APK
         # 打包上传生成的 APK 到的网页端
         uses: actions/upload-artifact@v2
